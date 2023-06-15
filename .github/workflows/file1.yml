@@ -1,0 +1,7 @@
+on:
+  push:
+    branches: [team_syuria]
+  
+jobs:
+  job1:
+    
