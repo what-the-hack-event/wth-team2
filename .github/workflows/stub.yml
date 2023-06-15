@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: step one
         run: |
-            echo "step one ran" 
+            echo "step one ran ${{secrets.STUB_SECRET}}" 
   jobTwo:
     name: job two
     runs-on: ubuntu-latest
