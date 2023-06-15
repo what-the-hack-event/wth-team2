@@ -3,7 +3,7 @@ on:
 jobs:
   jobOne:
     name: job one
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: step one
         run: |
