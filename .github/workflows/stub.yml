@@ -1,1 +1,10 @@
-
+on:
+  workflow_dispatch:
+jobs:
+  jobOne:
+    name: job one
+    runs-on: ubuntu-18.04
+    steps:
+      - name: step one
+        run: |
+            echo "step one ran" 
