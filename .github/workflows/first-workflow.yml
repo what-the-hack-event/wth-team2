@@ -3,7 +3,9 @@ on:
 
 jobs:
   job1:
+    name: test flow
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: step one
+        run: |
           echo "step 1 ran"
