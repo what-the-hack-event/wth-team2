@@ -1,15 +1,1 @@
-on:
-  push
 
-name: Cowsays
-
-jobs:
-  cow:
-    name: Cowsays
-    runs-on: ubuntu-latest
-    steps:
-    - name: Ship it
-      uses: mscoutermarsh/cowsays-action@master
-      with:
-        text: 'ship ship ship!'
-        color: 'red'
