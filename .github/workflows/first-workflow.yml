@@ -23,4 +23,7 @@ jobs:
       - name: Run cowsays action
         uses: peter-evans/cowsay-action@v1
         with:
-          text: "Moo!"
+          - name: Run cowsays action
+            uses: docker://docker/whalesay:latest
+            with:
+              text: "Moo!"
