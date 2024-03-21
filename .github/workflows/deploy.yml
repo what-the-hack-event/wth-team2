@@ -20,6 +20,6 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           scope: 'resourcegroup'
-          resourcegroup: ${{vars.RESOURCEGROUP}}
+          resourceGroupName: ${{vars.RESOURCEGROUP}}
           templatefile: './infrastructureascode/main.bicep'
           deploymentmode: 'Incremental'
