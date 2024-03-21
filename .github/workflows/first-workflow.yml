@@ -15,3 +15,15 @@ jobs:
         
       - name: Step 2
         run: echo "This is Step 2"
+
+        job-2:
+          runs-on: ubuntu-latest
+
+          steps:
+            - name: cowsays
+              uses: actions/checkout@v2
+              
+            - name: Run cowsays action
+              uses: peter-evans/cowsay-action@v1
+              with:
+                text: "Moo!"
