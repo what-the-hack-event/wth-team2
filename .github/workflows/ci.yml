@@ -55,15 +55,17 @@ jobs:
       run: docker push $registryName/$repositoryName:$tag
 
   DeployImagetoDev:
-        - name: Azure Login
-        uses: azure/login@v1
-        with:
-          creds: ${{secrets.CLIENTSECRET}}
-      
-      - name: Deploy to Azure Web App
-        uses: Azure/webapps-deploy@v2
-        with:
-          app-name: 37us6ullbh7fe-dev
-          images: 37us6ullbh7fewthreg.azurecr.io/wth/dotnetcoreapp:$tag
+    runs-on: ubuntu-latest
+    steps:  
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.CLIENTSECRET}}
+    
+    - name: Deploy to Azure Web App
+      uses: Azure/webapps-deploy@v2
+      with:
+        app-name: 37us6ullbh7fe-dev
+        images: 37us6ullbh7fewthreg.azurecr.io/wth/dotnetcoreapp:$tag
 
       
