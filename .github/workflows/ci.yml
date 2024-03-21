@@ -70,4 +70,25 @@ jobs:
         app-name: 37us6ullbh7fe-dev
         images: 37us6ullbh7fewthreg.azurecr.io/wth/dotnetcoreapp:${{github.run_number}}
 
-      
+  DeployImagetoTest:
+    runs-on: ubuntu-latest
+    needs: DeployImagetoDev
+    steps:  
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.CLIENTSECRET}}
+
+    - uses: trstringer/manual-approval@v1
+      with:
+        secret: ${{ github.TOKEN }}
+        approvers: wth-team2
+        minimum-approvals: 1
+        issue-title: "Deploying v1.3.5 to prod from staging"
+        issue-body: "Please approve or deny the deployment of version v1.3.5."
+          
+    - name: Deploy to Azure Web App
+      uses: Azure/webapps-deploy@v2
+      with:
+        app-name: 37us6ullbh7fe-dev
+        images: 37us6ullbh7fewthreg.azurecr.io/wth/dotnetcoreapp:${{github.run_number}}
