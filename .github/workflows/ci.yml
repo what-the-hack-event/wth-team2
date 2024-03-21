@@ -41,6 +41,7 @@ jobs:
 
   dockerDeployment:
     runs-on: ubuntu-latest
+    needs: build
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -56,6 +57,7 @@ jobs:
 
   DeployImagetoDev:
     runs-on: ubuntu-latest
+    needs: dockerDeployment
     steps:  
     - name: Azure Login
       uses: azure/login@v1
