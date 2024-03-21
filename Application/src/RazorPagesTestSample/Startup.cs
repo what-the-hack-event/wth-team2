@@ -13,7 +13,7 @@ namespace RazorPagesTestSample
         {
             services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("InMemoryDb"));
 
-            services.AddRazorPages(); // a change
+            services.AddRazorPages(); 
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
