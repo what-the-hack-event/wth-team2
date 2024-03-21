@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using RazorPagesTestSample.Data;
 
-namespace RazorPagesTestSample
+namespace RazorPagesTestSample //comment
 {
     public class Program
     {
