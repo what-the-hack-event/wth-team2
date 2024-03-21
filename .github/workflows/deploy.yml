@@ -14,12 +14,13 @@ jobs:
       - name: Azure Login
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.CLIENTSECRET}}
+          creds: ${{secrets.CLIENTSECRET}}
 
-      - name: Install Azure CLI
-        uses: azure/CLI@v1
-
+      - 
       - name: Deploy Bicep
-        run: |
-          az deployment sub create --resourcegroup $RESOURCEGROUP --template-file ./InfrastructureAsCode/main.bicep
-        
+        uses: azure/arm-deploy@v1
+        with:
+          scope: 'Resource Group'
+          resource-group: $RESOURCEGROUP
+          template-file: './infrastructureascode/main.bicep'
+          deployment-mode: 'Incremental'
