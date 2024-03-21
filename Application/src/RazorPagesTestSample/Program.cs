@@ -19,7 +19,6 @@ namespace RazorPagesTestSample
                 var services = scope.ServiceProvider;
                 var db = services.GetRequiredService<AppDbContext>();
 
-                //db connection
                 db.Database.EnsureCreated();
 
                 if (!db.Messages.Any())
