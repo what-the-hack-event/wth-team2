@@ -19,10 +19,7 @@ jobs:
   job-2:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: cowsays
-        uses: actions/checkout@v2
-        
+    steps:        
       - name: Run cowsays action
         uses: peter-evans/cowsay-action@v1
         with:
