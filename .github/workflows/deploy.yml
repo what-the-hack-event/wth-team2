@@ -1,0 +1,25 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.CLIENTSECRET}}
+
+      - name: Install Azure CLI
+        uses: azure/CLI@v1
+
+      - name: Deploy Bicep
+        run: |
+          az deployment sub create --resourcegroup $RESOURCEGROUP --template-file ./InfrastructureAsCode/main.bicep
+        
