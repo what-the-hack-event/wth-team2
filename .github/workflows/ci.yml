@@ -3,6 +3,13 @@
 
 name: CI
 
+#add variables called registryName repositoryName and imageName
+env:
+  registryName: '37us6ullbh7fewthreg.azurecr.io'
+  repositoryName: 'wth/dotnetcoreapp'
+  dockerFolderPath: 'Application/src/RazorPagesTestSample'
+  tag: ${{github.run_number}}
+
 on:
   push:
     branches: [ "main" ]
@@ -31,3 +38,18 @@ jobs:
       run: dotnet build --no-restore --configuration Release ./Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
     - name: Test
       run: dotnet test --no-build --verbosity normal ./Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj
+
+  dockerDeployment:
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Docker Login
+      run: docker login ${{env.registryName}} -u ${{secrets.ACR_USERNAME}} -p ${{secrets.ACR_PASSWORD}}
+
+    - name: Docker Build
+      run: docker build -t $registryName/$repositoryName:$tag --build-arg build_version=$tag $dockerFolderPath
+
+    - name: Docker Push
+      run: docker push $registryName/$repositoryName:$tag
+      
