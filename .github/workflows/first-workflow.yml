@@ -1,9 +1,14 @@
 name: First Workflow
 
 
-on: 
+on:
   workflow_dispatch:
-  
+    inputs:
+      input:
+        description: "Test"
+        required: false
+        default: "World"
+
 jobs:
   step-1:
     runs-on: ubuntu-latest
