@@ -68,6 +68,6 @@ jobs:
       uses: Azure/webapps-deploy@v2
       with:
         app-name: 37us6ullbh7fe-dev
-        images: 37us6ullbh7fewthreg.azurecr.io/wth/dotnetcoreapp:$tag
+        images: 37us6ullbh7fewthreg.azurecr.io/wth/dotnetcoreapp:${{github.run_number}}
 
       
