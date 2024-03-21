@@ -15,6 +15,7 @@ jobs:
         run: echo "This is Step 2"
 
   job-2:
+    needs: step-1
     runs-on: ubuntu-latest
 
     steps:
