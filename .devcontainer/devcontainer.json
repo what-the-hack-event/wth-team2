@@ -15,5 +15,7 @@
 				"GitHub.copilot-chat"
 			]
 		}
-	}
+	},
+	"postCreateCommand": "nuget restore"
 }
+
