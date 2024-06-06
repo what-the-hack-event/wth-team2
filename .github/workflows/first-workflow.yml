@@ -1,6 +1,10 @@
 on: 
   workflow_dispatch:
 
+on:
+  project_card:
+    types: [created, deleted]
+
 jobs:
   job1:
     runs-on: ubuntu-latest
