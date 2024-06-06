@@ -1,9 +1,9 @@
 on: 
   workflow_dispatch:
-  project_card:
-    types: [created, deleted]
+  #project_card:
+  # types: [created, deleted]
   issues:
-    types: [opened, edited, milestoned]
+    types: [opened, deleted]
 
 jobs:
   job1:
