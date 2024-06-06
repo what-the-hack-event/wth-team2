@@ -1,0 +1,6 @@
+jobs:
+  steps:
+    run: echo "step 1"
+  steps:
+    run: echo "step 2"
+
