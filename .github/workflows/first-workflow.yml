@@ -1,7 +1,5 @@
 on: 
   workflow_dispatch:
-
-on:
   project_card:
     types: [created, deleted]
 
