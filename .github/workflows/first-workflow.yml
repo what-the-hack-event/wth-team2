@@ -16,5 +16,5 @@ jobs:
     - name: GitHub Action from the GitHub Marketplace
       uses: mscoutermarsh/cowsays-action@master
       with:
-        text: 'ship ship ship!'
+        text: 'Team 2 cow says moo!'
         color: 'red'
