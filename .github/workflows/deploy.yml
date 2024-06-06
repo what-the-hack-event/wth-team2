@@ -20,4 +20,4 @@ jobs:
         resourceGroupName: ${{ secrets.AZURE_RG }}
         template: ./InfrastructureAsCode/main.bicep
         failOnStdErr: false
-        parameters: environment=prod
+        parameters: environmentprod

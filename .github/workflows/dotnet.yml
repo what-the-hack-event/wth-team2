@@ -7,10 +7,12 @@ on:
   push:
     paths: 
       - 'Application/**'
+      - '.github/workflows/dotnet.yml'
     branches: [ "main" ]
   pull_request:
     paths: 
       - 'Application/**'
+      - '.github/workflows/dotnet.yml'
     branches: [ "main" ]
 
 jobs:
